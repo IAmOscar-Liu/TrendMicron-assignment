@@ -1,0 +1,192 @@
+.App {
+  --primary-color: #db3d44;
+}
+
+.App > h1 {
+  text-align: center;
+  padding: 0.5em;
+  background: var(--primary-color);
+  color: white;
+}
+
+.cmp-type {
+  text-transform: capitalize;
+  padding-left: 1.5em;
+  font-size: 1.5em;
+  margin-block: 1em 0.5em;
+}
+
+.date-picked {
+  padding-left: 2em;
+  margin-bottom: 1em;
+  color: var(--primary-color);
+}
+
+.cmp-btns {
+  padding-left: 2em;
+}
+
+.cmp-btns button {
+  outline: none;
+  border: none;
+  background: var(--primary-color);
+  font-size: 1.2em;
+  padding: 0.2em 0.5em;
+  color: white;
+  border-radius: 1em;
+  cursor: pointer;
+}
+
+.cmp-btns button + button {
+  margin-left: 0.5em;
+}
+
+.cmp-btns button.active {
+  pointer-events: none;
+  background: #d7a9ab;
+}
+
+.calendar {
+  margin-top: 0.8em;
+  margin-left: 2em;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.calendar__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  padding-right: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.calendar__header.large-bottom-margin {
+  margin-bottom: 0.8em;
+}
+
+.calendar__header > * {
+  cursor: pointer;
+}
+
+.calendar__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--body-gap);
+}
+
+.calendar__body p {
+  display: flex;
+}
+
+.calendar__body .weekday-title {
+  font-weight: bolder;
+}
+
+.calendar__body p span {
+  width: 3em;
+}
+
+.calendar__body .month-body span,
+.calendar__body .year-body span {
+  width: 5.25em;
+}
+
+.calendar__body .weekday-body span:not(.gray),
+.calendar__body .month-body span:not(.gray),
+.calendar__body .year-body span:not(.gray) {
+  cursor: pointer;
+}
+
+.calendar__body .weekday-body .gray,
+.calendar__body .month-body .gray,
+.calendar__body .year-body .gray {
+  color: #eeeeee;
+}
+
+.calendar__body .weekday-body .today,
+.calendar__body .month-body .today,
+.calendar__body .year-body .today {
+  color: var(--primary-color);
+}
+
+.calendar__body .weekday-body .select,
+.calendar__body .month-body .select,
+.calendar__body .year-body .select {
+  position: relative;
+  color: white;
+}
+
+.calendar__body .weekday-body .select::before,
+.calendar__body .month-body .select::before,
+.calendar__body .year-body .select::before {
+  content: "";
+  position: absolute;
+  width: calc(var(--char-length) + 1em);
+  height: calc(var(--char-length) + 1em);
+  background: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-0.5em, -0.3em);
+  z-index: -1;
+}
+
+.calendar__body .month-body .select::before {
+  transform: translate(-0.5em, -0.5em);
+}
+
+.calendar__body .year-body .select::before {
+  transform: translate(-0.5em, -0.8em);
+}
+
+.date-picker {
+  margin-top: 2em;
+}
+
+.calendar-wrapper {
+  padding: 1em 2em;
+  outline: 2px #ddd solid;
+  width: max-content;
+}
+
+.date-picker {
+  margin-left: 2em;
+}
+
+.form-wrapper {
+  display: flex;
+}
+
+.date-input {
+  outline: #333 2px solid;
+  width: max-content;
+  padding: 0.2em 1ch;
+}
+
+.date-input.focus {
+  outline: #35e1de 2px solid;
+}
+
+.date-input input[type="number"] {
+  border: none;
+  outline: none;
+  margin-left: 1ch;
+}
+.date-input .input-year {
+  width: 6ch;
+}
+.date-input .input-month {
+  width: 4ch;
+}
+.date-input .input-date {
+  width: 4ch;
+}
+.date-input input[type="submit"] {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.2em 1ch;
+  border-radius: 1ch;
+  background: var(--primary-color);
+  color: white;
+}
